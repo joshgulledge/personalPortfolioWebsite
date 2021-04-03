@@ -1,21 +1,22 @@
 import React from 'react';
-import NavBar from '../Nav/Nav';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
 import './App.css';
 
-import winterHike from '../../Images/winterHike.jpg';
+
+// custom components
+import NavBar from '../Nav/Nav';
+import MainPage from '../MainPage/MainPage';
+import ProjectPage from '../ProjectPage/ProjectPage';
 
 // material ui
 import {ThemeProvider, createMuiTheme, makeStyles} from '@material-ui/core/styles';
-import { Grid, Paper} from '@material-ui/core';
+import { Grid, Paper, Typography} from '@material-ui/core';
+import EmploymentPage from '../EmploymentPage/EmploymentPage';
+import EducationPage from '../EducationPage/EducationPage';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    width: '50%',
-    margin: '20px',
-    spacing: (2)
-  },
-}));
+
+
 const newTheme = createMuiTheme({
   palette: {
     type: 'dark',
@@ -32,31 +33,30 @@ const newTheme = createMuiTheme({
 }); // end newTheme
 
 function App() {
-  const classes = useStyles();
 
   return (
     <ThemeProvider theme={newTheme}>
-      <Grid container>
-        <Grid item container xs={12}>
-          <NavBar />
-        </Grid>
-        
-        <Grid item xs={5} >
-          <Paper className={classes.root} elevation={3}>
-            <img src={winterHike} style={{borderRadius: '5px'}} alt='winter profile' width='100%'/>
-          </Paper>
-        </Grid>
-        <Grid item xs={2} />
 
-        <Grid item xs={5}>
-          <Paper style={{backgroundColor: '#acb0b1', color: 'black'}} className={classes.root} elevation={3}>
-            <p>About me</p>
-          </Paper>
-        </Grid>
+      <Router>
+        <NavBar />
         
-      
-        
-      </Grid>
+        <Route exact path='/' >
+          <MainPage />
+        </Route>
+
+        <Route exact path='/projects' >
+          <ProjectPage />
+        </Route>
+
+        <Route exact path='/employment' >
+          <EmploymentPage />
+        </Route>
+
+        <Route exact path='/education' >
+          <EducationPage />
+        </Route>
+
+      </Router>
     </ThemeProvider>
   );
 }
