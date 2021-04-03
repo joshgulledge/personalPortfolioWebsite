@@ -1,0 +1,9 @@
+
+body{
+  justify-content: center;
+  background-image: url('../../Images/whiteTrees.jpeg');
+}
+
+.colorTrial {
+  background-color: #acb0b1;
+}
