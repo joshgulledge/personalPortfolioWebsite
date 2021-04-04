@@ -2,6 +2,8 @@
 body{
   justify-content: center;
   background-image: url('../../Images/whiteTrees.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .colorTrial {

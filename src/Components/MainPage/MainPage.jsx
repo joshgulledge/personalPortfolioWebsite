@@ -1,11 +1,15 @@
 import {Link} from 'react-router-dom';
 import winterHike from '../../Images/winterHike.jpg';
 
+// local imports
+import resume from '../../Images/JoshResume.pdf';
+
 // material ui
 import {makeStyles} from '@material-ui/core/styles';
 import { Box, Grid, Paper, Typography} from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -13,7 +17,10 @@ const useStyles = makeStyles((theme) => ({
     margin: '20px',
     spacing: (2),
     padding: '5px',
-    borderRadius: '30px'
+    borderRadius: '30px',
+    backgroundColor: '#acb0b1', 
+    color: '#373E40',
+     opacity: '95%',
   },
 }));
 
@@ -32,12 +39,7 @@ const MainPage = function () {
         <Grid item xs={2} />
 
         <Grid container item xs={5} justify='center' >
-          <Paper 
-          style={{
-            backgroundColor: '#acb0b1', 
-            color: '#373E40',
-          opacity: '95%'}} 
-          elevation={3} className={classes.paper}>
+          <Paper elevation={3} className={classes.paper}>
             <Grid justify='center' container item xs={12}>
                 <Typography gutterBottom variant='h4'  align='center'>
                   About me:
@@ -51,6 +53,7 @@ const MainPage = function () {
             
               <Grid container justify='center' item xs={12}>
                 <Box style={{
+                  marginTop: '100px',
                   borderRadius: '10px',
                   padding: '5px',
                   backgroundColor: '#373E40',
@@ -77,6 +80,17 @@ const MainPage = function () {
                           href='https://www.linkedin.com/in/joshua-gulledge-785b961b6/'>See My LinkedIn</a>  
                         </Grid>   
                       </Grid>
+
+                      <Grid spacing={2} container alignItems='center' item xs={12}>
+                        <Grid item xs={2}>
+                          <PictureAsPdfIcon />
+                        </Grid>
+                        <Grid item xs={10} >
+                          <a style={{color: '#B7D5D4', textDecoration: 'none'}} 
+                          href={resume} download >Download My Resume</a>  
+                        </Grid>   
+                      </Grid>
+
                     </Grid>
                 </Box>
               </Grid>
