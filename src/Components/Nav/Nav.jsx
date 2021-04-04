@@ -36,13 +36,17 @@ const NavBar = function () {
     history.push('/education' )
   }; // end educationButton
 
+  const secretHome = function () {
+    history.push('/');
+  }
+
   return (
     <AppBar position="static">
       {/* <Grid container item xs={12}> */}
         <Toolbar>
           <Grid item xs={12} className={classes.root} spacing={2} container justify='center' alignItems='flex-end'>
 
-            <Grid item xs={6}>
+            <Grid onClick={secretHome} item xs={6}>
                 <Typography variant="h3" className={classes.title}>
                   Joshua Gulledge
                 </Typography>

@@ -10,8 +10,7 @@ import MainPage from '../MainPage/MainPage';
 import ProjectPage from '../ProjectPage/ProjectPage';
 
 // material ui
-import {ThemeProvider, createMuiTheme, makeStyles} from '@material-ui/core/styles';
-import { Grid, Paper, Typography} from '@material-ui/core';
+import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import EmploymentPage from '../EmploymentPage/EmploymentPage';
 import EducationPage from '../EducationPage/EducationPage';
 
