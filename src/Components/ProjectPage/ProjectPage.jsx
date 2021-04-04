@@ -37,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
     spacing: (2),
     padding: '5px',
     borderRadius: '30px',
-    backgroundColor: '#acb0b1', 
-    color: '#373E40',
     opacity: '95%',
     textAlign: 'center',
+    backgroundColor:  '#f3fcfd',
+    color: '#131516',
   },
   button: {
     margin: theme.spacing(2),

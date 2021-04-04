@@ -10,11 +10,11 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: '#acb0b1', 
+    backgroundColor: '#f3fcfd', 
     // height: '100vh',
     opacity: '95%',
     marginTop: '10px',
-    color: '#373E40',
+    color: '#131516',
     borderRadius: '15px',
   },
   grid: {

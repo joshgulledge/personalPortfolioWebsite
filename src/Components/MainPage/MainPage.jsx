@@ -4,6 +4,9 @@ import winterHike from '../../Images/winterHike.jpg';
 // local imports
 import resume from '../../Images/JoshResume.pdf';
 
+// import emailjs
+import emailjs from 'emailjs-com';
+
 // material ui
 import {makeStyles} from '@material-ui/core/styles';
 import { Box, Grid, Paper, Typography} from '@material-ui/core';
@@ -13,14 +16,13 @@ import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    width: '80%',
-    margin: '20px',
-    spacing: (2),
-    padding: '5px',
+    width: '75%',
+    margin: '30px',
+    spacing: (1),
     borderRadius: '30px',
-    backgroundColor: '#acb0b1', 
-    color: '#373E40',
-     opacity: '95%',
+    backgroundColor: '#f3fcfd', 
+    color: '#131516',
+    opacity: '95%',
   },
 }));
 
@@ -30,9 +32,10 @@ const MainPage = function () {
 
   return (
     <Grid container item xs={12}>
+
       <Grid item xs={5} >
-        <Paper style={{padding: '0'}} className={classes.paper} elevation={3}>
-          <img src={winterHike} style={{borderRadius: '30px'}} alt='winter profile' width='100%'/>
+        <Paper style={{/*padding: '0.05px', paddingBottom: '0px'height: '40px'*/}} className={classes.paper} elevation={3}>
+          <img src={winterHike} style={{borderRadius: '30px', marginBottom: '-4px'}} alt='winter profile' width='100%'/>
         </Paper>
       </Grid>
         
@@ -41,23 +44,23 @@ const MainPage = function () {
         <Grid container item xs={5} justify='center' >
           <Paper elevation={3} className={classes.paper}>
             <Grid justify='center' container item xs={12}>
-                <Typography gutterBottom variant='h4'  align='center'>
+                <Typography style={{marginTop: '30px', marginBottom: '20px'}} gutterBottom variant='h4'  align='center'>
                   About me:
                 </Typography>
               
             </Grid>
             <Grid container item xs={12}>
-              <Typography gutterBottom variant='body2'>
+              <Typography style={{marginLeft: '45px', marginRight: '45px'}} gutterBottom variant='body1'>
                 Looking back I believe it was when my wife told me about some of the code that she wrote for a school project that something beautiful sparked. Since then I have gone down the rabbit hole of SWIFT YouTube tutorials and listened to Machine Learning podcasts before diving in deep with a Javascript Udemy course and a full-time accelerated program where I received my Full Stack Software Engineering Certification. I have completed daily coding  challenges of all types including making small applications from scratch, as well as jumping in already started projects to get them completed. I have familiarized myself with vanilla JS, Python, and several libraries including JQuery, React, Redux, Passport and Node.js. I’ve used postico, postgresql, and Express to practice SQL and become more acquainted with back end technologies. 
               </Typography>
             
               <Grid container justify='center' item xs={12}>
                 <Box style={{
-                  marginTop: '100px',
+                  marginTop: '30px',
                   borderRadius: '10px',
                   padding: '5px',
-                  backgroundColor: '#373E40',
-                  color: '#B7D5D4',
+                  backgroundColor: '#131516',
+                  color: '#f3fcfd',
                   width: '80%'}}>
                     <Grid container justify='center' >
 

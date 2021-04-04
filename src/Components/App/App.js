@@ -10,7 +10,7 @@ import MainPage from '../MainPage/MainPage';
 import ProjectPage from '../ProjectPage/ProjectPage';
 
 // material ui
-import {ThemeProvider, createMuiTheme} from '@material-ui/core/styles';
+import {ThemeProvider, createMuiTheme, makeStyles} from '@material-ui/core/styles';
 import EmploymentPage from '../EmploymentPage/EmploymentPage';
 import EducationPage from '../EducationPage/EducationPage';
 
@@ -21,9 +21,9 @@ const newTheme = createMuiTheme({
     type: 'dark',
     primary: {
       // light: '',
-      main: '#373E40',
+      main: '#f3fcfd',
       // dark: '',
-      contrastText: '#B7D5D4',
+      contrastText: '#131516',
     },
     secondary: {
       main: '#77878B',
