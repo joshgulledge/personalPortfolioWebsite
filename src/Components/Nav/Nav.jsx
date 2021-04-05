@@ -46,7 +46,7 @@ const NavBar = function () {
         <Toolbar>
           <Grid item xs={12} className={classes.root} spacing={2} container justify='center' alignItems='flex-end'>
 
-            <Grid onClick={secretHome} item xs={6}>
+            <Grid onClick={secretHome} item xs={4}>
                 <Typography variant="h3" className={classes.title}>
                   Joshua Gulledge
                 </Typography>
@@ -65,6 +65,10 @@ const NavBar = function () {
 
             <Grid item xs={2}>
               <Button onClick={educationButton} color="inherit">Education</Button>
+            </Grid>
+
+            <Grid item xs={2}>
+              <Button onClick={secretHome} color="inherit">Home</Button>
             </Grid>
             
           </Grid>

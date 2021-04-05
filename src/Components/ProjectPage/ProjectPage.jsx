@@ -64,31 +64,6 @@ const ProjectPage = function () {
   // local state, used to move through project list array
   let [count, setCount] = useState(0);
 
-  // local functions
-  const seeNextProject = function () {
-
-    if (count < projectList.length - 1) {
-      let counter = count;
-      counter++;
-      setCount(counter);
-    };
-    if (count >= projectList.length -1) {
-      setCount(0);
-    };
-  }; // end seeNextProject
-
-  const seePrevProject = function () {
-
-    if (count > 0) {
-      let counter = count;
-      counter--;
-      setCount(counter);
-    };
-    if (count <= 0) {
-      setCount(projectList.length -1);
-    };
-  }; // end seePrevProject
-
   return (
     <Grid container 
           justify='space-between'
@@ -107,57 +82,20 @@ const ProjectPage = function () {
 
                 <Grid item xs={12}>
                   <img src={project.projectImage} 
-                  alt='website main page' style={{width: '80%', margin: '10px'}} />
+                  alt='website main page' 
+                  style={{width: '80%', margin: '10px'}} />
                 </Grid>
 
                 <Grid item xs={12}>
                   <Typography className={classes.textInput} gutterBottom variant='body2'>
-                    {project.projectDescription}
+                    {project.projectDescription} <a href={project.projectLink}>See this site here.</a>
                   </Typography>
                 </Grid>
               </Paper>
             </Grid>
         )
       })}
-          {/* <Grid item xs={3}>
-            <Button onClick={seePrevProject}
-            className={classes.button} 
-            variant='contained' 
-            color='primary'>
-              See Previous Project
-            </Button>         
-          </Grid>
-
-          <Grid  justify='center' alignItems='center' container item xs={6}>
-            <Paper className={classes.paper} elevation={3}>
-              <Grid item xs={12}>
-                <Typography gutterBottom variant='h3'>
-                  {projectList[count].projectName}
-                </Typography>
-              </Grid>
-
-              <Grid item xs={12}>
-                <img src={projectList[count].projectImage} 
-                alt='website main page' style={{width: '80%', margin: '10px'}} />
-              </Grid>
-
-              <Grid item xs={12}>
-                <Typography gutterBottom variant='body2'>
-                  {projectList[count].projectDescription}
-                </Typography>
-              </Grid>
-            </Paper>
-          </Grid>
-
-          <Grid item xs={1} />
-          <Grid item xs={2}>
-          <Button onClick={seeNextProject}
-          className={classes.button} 
-          variant='contained' 
-          color='primary'>
-              See Next Project
-            </Button>
-          </Grid> */}
+          
         </Grid>
   )
 }; // end ProjectPage
