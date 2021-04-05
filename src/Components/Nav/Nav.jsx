@@ -22,7 +22,6 @@ const NavBar = function () {
   const classes = useStyles();
   const history = useHistory();
 
-
   // functions
   const projectButton = function () {
     history.push('/projects');
@@ -38,7 +37,7 @@ const NavBar = function () {
 
   const secretHome = function () {
     history.push('/');
-  }
+  }; // end secretHome
 
   return (
     <AppBar position="static">
