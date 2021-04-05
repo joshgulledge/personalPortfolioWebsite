@@ -6,11 +6,10 @@ import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    backgroundColor: '#f3fcfd', 
-    // height: '100vh',
+    backgroundColor: '#f4f4f2', 
     opacity: '95%',
     marginTop: '10px',
-    color: '#131516',
+    color: '#495464',
     borderRadius: '15px',
   },
 }));

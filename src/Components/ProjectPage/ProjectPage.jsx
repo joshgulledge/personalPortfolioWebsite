@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '30px',
     opacity: '95%',
     textAlign: 'center',
-    backgroundColor:  '#f3fcfd',
-    color: '#131516',
+    backgroundColor:  '#f4f4f2',
+    color: '#495464',
   },
   button: {
     margin: theme.spacing(2),

@@ -1,18 +1,24 @@
-import {Link} from 'react-router-dom';
-import winterHike from '../../Images/winterHike.jpg';
+import { useState } from 'react';
+
 
 // local imports
+import winterHike from '../../Images/winterHike.jpg';
 import resume from '../../Images/JoshResume.pdf';
-
-// import emailjs
-import emailjs from 'emailjs-com';
+import MessageForm from '../MessageForm/MessageForm';
 
 // material ui
 import {makeStyles} from '@material-ui/core/styles';
-import { Box, Grid, Paper, Typography} from '@material-ui/core';
+import { 
+  Box, 
+  Modal, 
+  Grid, 
+  Paper, 
+  Button,
+  Typography} from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import PictureAsPdfIcon from '@material-ui/icons/PictureAsPdf';
+import MessageIcon from '@material-ui/icons/Message';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -20,15 +26,45 @@ const useStyles = makeStyles((theme) => ({
     margin: '30px',
     spacing: (1),
     borderRadius: '30px',
-    backgroundColor: '#f3fcfd', 
-    color: '#131516',
+    backgroundColor: '#f4f4f2', 
+    color: '#495464',
     opacity: '95%',
   },
-}));
+  modal: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: '#f4f4f2',
+    color: '#495464',
+    border: 'none',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+})); // end useStyles
+
+const getModalStyle = function () {
+  return {
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)'
+  };
+}; // end modalStyle
 
 const MainPage = function () {
 
   const classes = useStyles();
+  const [modalStyle] = useState(getModalStyle);
+
+  // local state
+  const [open, setOpen] = useState(false);
+
+  // open and close material ui modal
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
   return (
     <Grid container item xs={12}>
@@ -56,11 +92,11 @@ const MainPage = function () {
             
               <Grid container justify='center' item xs={12}>
                 <Box style={{
-                  marginTop: '30px',
+                  margin: '30px',
                   borderRadius: '10px',
                   padding: '5px',
-                  backgroundColor: '#131516',
-                  color: '#f3fcfd',
+                  backgroundColor: '#495464',
+                  color: '#f4f4f2',
                   width: '80%'}}>
                     <Grid container justify='center' >
 
@@ -69,7 +105,7 @@ const MainPage = function () {
                           <GitHubIcon />
                         </Grid>
                         <Grid item xs={10} >
-                          <a style={{color: '#B7D5D4', textDecoration: 'none'}} 
+                          <a style={{color: '#f4f4f2', textDecoration: 'none'}} 
                           href='https://github.com/joshgulledge'>See My Github</a>  
                         </Grid>
                       </Grid>
@@ -79,7 +115,7 @@ const MainPage = function () {
                           <LinkedInIcon />
                         </Grid>
                         <Grid item xs={10} >
-                          <a style={{color: '#B7D5D4', textDecoration: 'none'}} 
+                          <a style={{color: '#f4f4f2', textDecoration: 'none'}} 
                           href='https://www.linkedin.com/in/joshua-gulledge-785b961b6/'>See My LinkedIn</a>  
                         </Grid>   
                       </Grid>
@@ -89,8 +125,17 @@ const MainPage = function () {
                           <PictureAsPdfIcon />
                         </Grid>
                         <Grid item xs={10} >
-                          <a style={{color: '#B7D5D4', textDecoration: 'none'}} 
+                          <a style={{color: '#f4f4f2', textDecoration: 'none'}} 
                           href={resume} download >Download My Resume</a>  
+                        </Grid>   
+                      </Grid>
+
+                      <Grid spacing={2} container alignItems='center' item xs={12}>
+                        <Grid item xs={2}>
+                          <MessageIcon />
+                        </Grid>
+                        <Grid item xs={10} >
+                          <Button style={{color: '#f4f4f2'}} onClick={() =>{handleOpen()}}>Send Me A Message</Button>
                         </Grid>   
                       </Grid>
 
@@ -101,6 +146,16 @@ const MainPage = function () {
             </Grid>
           </Paper>
         </Grid> 
+        {/* modal window */}
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="MessageFrom"
+          aria-describedby="Inputs for Message">
+            <div style={modalStyle} className={classes.modal}>
+             <MessageForm />
+            </div>
+        </Modal>
     </Grid>
 
   )

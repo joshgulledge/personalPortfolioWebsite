@@ -10,7 +10,7 @@ import MainPage from '../MainPage/MainPage';
 import ProjectPage from '../ProjectPage/ProjectPage';
 
 // material ui
-import {ThemeProvider, createMuiTheme, makeStyles} from '@material-ui/core/styles';
+import {ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import EmploymentPage from '../EmploymentPage/EmploymentPage';
 import EducationPage from '../EducationPage/EducationPage';
 
@@ -21,13 +21,15 @@ const newTheme = createMuiTheme({
     type: 'dark',
     primary: {
       // light: '',
-      main: '#f3fcfd',
+      main: '#f4f4f2',
       // dark: '',
-      contrastText: '#131516',
+      contrastText: '#495464',
     },
     secondary: {
-      main: '#77878B',
-    },
+      main: '#495464',
+      contrastText: '#f4f4f2',
+    }
+    
   }
 }); // end newTheme
 
