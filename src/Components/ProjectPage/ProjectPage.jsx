@@ -10,6 +10,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import chokingPlastic from '../../Images/chokingPlastic.png';
 import feedBack from '../../Images/feedBackApp.png';
 import taskManager from '../../Images/taskManager.png';
+import forkify from '../../Images/Forkify.png';
 
 // local storage cause this site doesn't need a db
 const projectList = [{
@@ -28,14 +29,20 @@ const projectList = [{
   projectImage: taskManager,
   projectLink: 'https://serene-oasis-64999.herokuapp.com/',
 }, 
+{
+  projectName: 'Recipe Application',
+  projectDescription: 'This project was done as I followed along with a udemy class. It was done with vanilla JS and calls to an API for recipe information.',
+  projectImage: forkify,
+  projectLink: 'https://forkify-joshg.netlify.app/',
+}, 
 ]; // end projectList
 
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    margin: '20px',
     spacing: (2),
-    padding: '5px',
+    width: '50%',
+    margin: theme.spacing(2),
     borderRadius: '30px',
     opacity: '95%',
     textAlign: 'center',
@@ -44,6 +51,9 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(2),
+  },
+  textInput: {
+    margin: theme.spacing(1),
   }
 }));
 
@@ -84,16 +94,38 @@ const ProjectPage = function () {
           justify='space-between'
           alignItems='center'>
 
-          <Grid item xs={3}>
+
+      {projectList.map( (project, index) => {
+        return (
+          <Grid container justify='center' >
+            <Paper key={index} className={classes.paper} elevation={3}>
+                <Grid item xs={12}>
+                  <Typography gutterBottom variant='h3'>
+                    {project.projectName}
+                  </Typography>
+                </Grid>
+
+                <Grid item xs={12}>
+                  <img src={project.projectImage} 
+                  alt='website main page' style={{width: '80%', margin: '10px'}} />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Typography className={classes.textInput} gutterBottom variant='body2'>
+                    {project.projectDescription}
+                  </Typography>
+                </Grid>
+              </Paper>
+            </Grid>
+        )
+      })}
+          {/* <Grid item xs={3}>
             <Button onClick={seePrevProject}
             className={classes.button} 
             variant='contained' 
             color='primary'>
               See Previous Project
-            </Button>
-            {/* <IconButton aria-label="delete">
-              <ArrowBackIosIcon onClick={() => console.log('go back')}/>
-            </IconButton> */}
+            </Button>         
           </Grid>
 
           <Grid  justify='center' alignItems='center' container item xs={6}>
@@ -125,10 +157,7 @@ const ProjectPage = function () {
           color='primary'>
               See Next Project
             </Button>
-            {/* <IconButton aria-label="delete">
-              <ArrowForwardIosIcon onClick={() => console.log('go forward')}/>
-            </IconButton> */}
-          </Grid>
+          </Grid> */}
         </Grid>
   )
 }; // end ProjectPage
