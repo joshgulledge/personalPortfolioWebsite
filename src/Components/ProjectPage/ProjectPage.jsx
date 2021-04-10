@@ -15,23 +15,27 @@ const projectList = [{
   projectName: 'Choking Plastic',
   projectDescription: 'This project allows logged in users to keep track of plastic alternative products that they liked and disliked. It also allows them to leave a personal review for themselves of products. This application gets product information from a third party API and links up tp amazon.',
   projectImage: chokingPlastic,
-  projectLink: 'https://chokingplastic.herokuapp.com/#/home'
+  projectLink: 'https://chokingplastic.herokuapp.com/#/home',
+  projectGitHub: 'https://github.com/joshgulledge/Plastic-Alt-Tracker'
 }, {
   projectName: 'FeedBack App',
   projectDescription: 'This is an application for the user to leave feedback. It was modeled after the feedback from from Prime Digital Academy. It stores the feedback for admin to review. Answers are required for each response.',
   projectImage: feedBack,
   projectLink: 'https://damp-scrubland-40746.herokuapp.com/#/',
+  projectGitHub: 'https://github.com/joshgulledge/feedback-app'
 }, {
   projectName: 'Task Manager',
   projectDescription: 'This is a simple task manager application. It was wrote with Jquery and allows users to add and manage tasks. The user can mark the task as complete or incomplete and can also delete the task.',
   projectImage: taskManager,
   projectLink: 'https://serene-oasis-64999.herokuapp.com/',
+  projectGitHub: 'https://github.com/joshgulledge/to-do-list'
 }, 
 {
   projectName: 'Recipe Application',
   projectDescription: 'This project was done as I followed along with a udemy class. It was done with vanilla JS and calls to an API for recipe information.',
   projectImage: forkify,
   projectLink: 'https://forkify-joshg.netlify.app/',
+  projectGitHub: 'https://github.com/joshgulledge/udemy-forkify-app'
 }, 
 ]; // end projectList
 
@@ -86,7 +90,7 @@ const ProjectPage = function () {
 
                 <Grid item xs={12}>
                   <Typography className={classes.textInput} gutterBottom variant='body2'>
-                    {project.projectDescription} <a href={project.projectLink}>See this site here.</a>
+                    {project.projectDescription} <a href={project.projectLink}>See this site here.</a> <a href={project.projectGitHub}>Or see the code here.</a>
                   </Typography>
                 </Grid>
               </Paper>
