@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // material ui 
 import {makeStyles} from '@material-ui/core/styles';
@@ -62,9 +62,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ProjectPage = function () {
   const classes = useStyles();
-
-  // local state, used to move through project list array
-  let [count, setCount] = useState(0);
 
   return (
     <Grid container 
