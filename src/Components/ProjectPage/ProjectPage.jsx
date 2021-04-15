@@ -71,8 +71,8 @@ const ProjectPage = function () {
 
       {projectList.map( (project, index) => {
         return (
-          <Grid container justify='center' >
-            <Paper key={index} className={classes.paper} elevation={3}>
+          <Grid key={index} container justify='center' >
+            <Paper  className={classes.paper} elevation={3}>
                 <Grid item xs={12}>
                   <Typography gutterBottom variant='h3'>
                     {project.projectName}
