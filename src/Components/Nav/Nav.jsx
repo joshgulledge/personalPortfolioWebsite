@@ -41,38 +41,38 @@ const NavBar = function () {
 
   return (
     <AppBar position="static">
-      {/* <Grid container item xs={12}> */}
+      <Grid container>
         <Toolbar>
-          <Grid item xs={12} className={classes.root} spacing={2} container justify='center' alignItems='flex-end'>
+          <Grid item xs={12} className={classes.root} spacing={2} container justify='space-between' display= 'inline-grid'>
 
-            <Grid onClick={secretHome} item xs={4}>
-                <Typography variant="h3" className={classes.title}>
+            <Grid item xs={12} lg={4}>
+                <Typography variant="h3" align='center' className={classes.title}>
                   Joshua Gulledge
                 </Typography>
-                <Typography variant="body2" className={classes.title}>
+                <Typography variant="body2" align='center' className={classes.title}>
                   Full Stack Software Engineer
                 </Typography>
             </Grid>
 
-            <Grid item xs={2}>
-              <Button onClick={projectButton} color="inherit">Projects</Button>
-            </Grid>
+            <Grid item xs={10} style={{ wrap: 'nowrap', display: 'inline-grid'}}>
+              <Button size="small" onClick={projectButton} color="inherit">Projects</Button>
+            {/* </Grid> */}
 
-            <Grid item xs={2}>
-              <Button onClick={employmentButton} color="inherit">Employment</Button>
-            </Grid>
+            {/* <Grid item xs={2} style={{backgroundColor: 'blue'}}> */}
+              <Button size="small" onClick={employmentButton} color="inherit">Employment</Button>
+            {/* </Grid> */}
 
-            <Grid item xs={2}>
-              <Button onClick={educationButton} color="inherit">Education</Button>
-            </Grid>
+            {/* <Grid item xs={2} style={{backgroundColor: 'green'}}> */}
+              <Button size="small" onClick={educationButton} color="inherit">Education</Button>
+            {/* </Grid> */}
 
-            <Grid item xs={2}>
-              <Button onClick={secretHome} color="inherit">Home</Button>
+            {/* <Grid item xs={2} style={{backgroundColor: 'red'}}> */}
+              <Button size="small" onClick={secretHome} color="inherit">Home</Button>
             </Grid>
             
           </Grid>
         </Toolbar>
-      {/* </Grid> */}
+      </Grid>
 
     </AppBar>
   )

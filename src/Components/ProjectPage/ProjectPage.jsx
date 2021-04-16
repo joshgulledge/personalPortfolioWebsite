@@ -43,7 +43,7 @@ const projectList = [{
 const useStyles = makeStyles((theme) => ({
   paper: {
     spacing: (2),
-    width: '50%',
+    width: '80%',
     margin: theme.spacing(2),
     borderRadius: '30px',
     opacity: '95%',
@@ -71,8 +71,8 @@ const ProjectPage = function () {
 
       {projectList.map( (project, index) => {
         return (
-          <Grid key={index} container justify='center' >
-            <Paper  className={classes.paper} elevation={3}>
+          <Grid item xs={12} lg={6} key={index} container justify='center' >
+            <Paper className={classes.paper} elevation={3}>
                 <Grid item xs={12}>
                   <Typography gutterBottom variant='h3'>
                     {project.projectName}

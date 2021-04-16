@@ -69,15 +69,15 @@ const MainPage = function () {
   return (
     <Grid container item xs={12}>
 
-      <Grid item xs={5} >
+      <Grid item xs={12}  lg={5}>
         <Paper style={{/*padding: '0.05px', paddingBottom: '0px'height: '40px'*/}} className={classes.paper} elevation={3}>
           <img src={winterHike} style={{borderRadius: '30px', marginBottom: '-4px'}} alt='winter profile' width='100%'/>
         </Paper>
       </Grid>
         
-        <Grid item xs={2} />
+        {/* <Grid item xs={2} /> */}
 
-        <Grid container item xs={5} justify='center' >
+        <Grid container item xs={12} justify='center' >
           <Paper elevation={3} className={classes.paper}>
             <Grid justify='center' container item xs={12}>
                 <Typography style={{marginTop: '30px', marginBottom: '20px'}} gutterBottom variant='h4'  align='center'>
@@ -85,8 +85,8 @@ const MainPage = function () {
                 </Typography>
               
             </Grid>
-            <Grid container item xs={12}>
-              <Typography style={{marginLeft: '45px', marginRight: '45px'}} gutterBottom variant='body1'>
+            <Grid container justify='center' item xs={12}>
+              <Typography style={{marginLeft: 'auto'}} gutterBottom variant='body1'>
                 Looking back I believe it was when my wife told me about some of the code that she wrote for a school project that something beautiful sparked. Since then I have gone down the rabbit hole of SWIFT YouTube tutorials and listened to Machine Learning podcasts before diving in deep with a Javascript Udemy course and a full-time accelerated program where I received my Full Stack Software Engineering Certification. I have completed daily coding challenges of all types including making small applications from scratch, as well as jumping in already started projects to get them completed. I have familiarized myself with vanilla JS, Python, and several JS libraries including JQuery, React, Redux, Passport and Node.js. I’ve used postico, postgresql, and Express to practice SQL and become more acquainted with back end technologies. 
               </Typography>
             
